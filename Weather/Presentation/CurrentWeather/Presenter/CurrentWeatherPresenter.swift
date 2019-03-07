@@ -23,7 +23,7 @@ class CurrentWeatherPresenter {
         firstly {
             service.getCurrentWeather()
             }.done { (data) in
-                print(data)
+                self.view.didLoad(data: data)
             }.catch { (error) in
                 print(error)
         }

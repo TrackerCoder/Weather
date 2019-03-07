@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CurrentWeatherViewInput: class {
-    
+    func didLoad(data: WeatherData)
 }
 
 protocol CurrentWeatherViewOutput {

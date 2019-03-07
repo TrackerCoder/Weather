@@ -13,13 +13,15 @@ struct Weather: ImmutableMappable {
     var id: Int
     var main: String
     var description: String
-    var iconName: String
+    var iconURL: URL
     
     init(map: Map) throws {
         id = try map.value("id")
         main = try map.value("main")
         description = try map.value("description")
+        var iconName: String
         iconName = try map.value("icon")
+        iconURL = try! "https://openweathermap.org/img/w/\(iconName).png".asURL()
     }
     
 }
