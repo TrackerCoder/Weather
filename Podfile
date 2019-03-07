@@ -9,5 +9,8 @@ target 'Weather' do
   pod 'Swinject'
   pod 'SwinjectStoryboard'
   pod 'Alamofire'
-
+  pod 'PromiseKit'
+  pod 'ObjectMapper'
+  pod 'Kingfisher'
+  
 end

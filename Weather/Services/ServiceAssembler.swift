@@ -14,7 +14,10 @@ class ServiceAssembler: Assembly, SwinjectInitAssembler {
     required init() {}
 
     func assemble(container: Container) {
-        let weatherService = WeatherServiceImp()
+        
+        let appId = "d2e2d10114054cb600e3d0bf422f0dcb" // move from here
+        let baseURL = "https://api.openweathermap.org/data/2.5/"
+        let weatherService = WeatherServiceImp(baseURL: baseURL, appId: appId)
         
         container.register(WeatherService.self) { _ in
             return weatherService

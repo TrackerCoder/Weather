@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol WeatherService {
-    func foo()
+    func getCurrentWeather() -> Promise<WeatherData>
 }

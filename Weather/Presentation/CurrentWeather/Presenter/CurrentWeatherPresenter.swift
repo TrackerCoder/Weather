@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 class CurrentWeatherPresenter {
     
@@ -19,8 +20,13 @@ class CurrentWeatherPresenter {
     }
     
     func viewIsReady() {
-        print("___ViewIsReady___")
-        service.foo()
+        firstly {
+            service.getCurrentWeather()
+            }.done { (data) in
+                print(data)
+            }.catch { (error) in
+                print(error)
+        }
     }
     
 }
