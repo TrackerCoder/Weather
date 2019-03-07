@@ -7,16 +7,25 @@
 //
 
 import UIKit
+import Swinject
+import SwinjectStoryboard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        initSwinject()
         return true
+    }
+    
+    func initSwinject() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let container = assembler.resolver as! Container
+        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
+        window?.rootViewController = storyboard.instantiateInitialViewController()
+        window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

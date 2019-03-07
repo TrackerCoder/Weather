@@ -6,5 +6,8 @@ target 'Weather' do
   use_frameworks!
 
   # Pods for Weather
+  pod 'Swinject'
+  pod 'SwinjectStoryboard'
+  pod 'Alamofire'
 
 end
