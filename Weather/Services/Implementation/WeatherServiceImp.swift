@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import PromiseKit
 import ObjectMapper
+import CoreLocation
 
 class WeatherServiceImp: WeatherService {
     
@@ -19,17 +20,18 @@ class WeatherServiceImp: WeatherService {
     private var currentWeatherURL: URL!
     private var forecastURL: URL!
     
+    var userLocation: CLLocationCoordinate2D!
+    
     init(baseURL: String, appId: String) {
         self.appId = appId
         self.baseURL = baseURL
-        
         currentWeatherURL = try! "\(baseURL)weather".asURL()
-        forecastURL = try! "\(baseURL)forecast".asURL()
+        forecastURL = try! "\(baseURL)forecast".asURL()        
     }
     
     func getCurrentWeather() -> Promise<WeatherData> {
         
-        let params: Parameters = ["lat": 35, "lon": 139, "APPID": self.appId]
+        let params: Parameters = ["lat": userLocation.latitude, "lon": userLocation.longitude, "APPID": self.appId]
         return Promise { seal in
             Alamofire.request(currentWeatherURL, parameters: params).validate().responseJSON { (response) in
                 switch response.result {
@@ -64,4 +66,5 @@ class WeatherServiceImp: WeatherService {
             }
         }
     }
+    
 }

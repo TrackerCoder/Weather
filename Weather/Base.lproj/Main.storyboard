@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lpl-g6-ggP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pT8-x2-zjV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -171,6 +171,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVX-U6-qpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1583.2" y="-676.01199400299856"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="dP3-gG-dAd">
+            <objects>
+                <viewController id="pT8-x2-zjV" customClass="RootViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8eK-cB-35o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location required. Change permission in settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pu2-uT-Alq">
+                                <rect key="frame" x="25" y="313" width="325" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQK-91-llK">
+                                <rect key="frame" x="144" y="371" width="87" height="30"/>
+                                <state key="normal" title="go to setting"/>
+                                <connections>
+                                    <action selector="openSettings:" destination="pT8-x2-zjV" eventType="touchUpInside" id="F6Q-TS-ajo"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DqG-Lo-ss0">
+                                <rect key="frame" x="177.5" y="272" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pu2-uT-Alq" firstAttribute="centerX" secondItem="8eK-cB-35o" secondAttribute="centerX" id="CeT-eg-o3M"/>
+                            <constraint firstItem="pu2-uT-Alq" firstAttribute="leading" secondItem="HJG-BC-E5B" secondAttribute="leading" constant="25" id="KXs-GZ-S5a"/>
+                            <constraint firstItem="DqG-Lo-ss0" firstAttribute="centerX" secondItem="8eK-cB-35o" secondAttribute="centerX" id="LGM-6T-IEw"/>
+                            <constraint firstItem="ZQK-91-llK" firstAttribute="top" secondItem="pu2-uT-Alq" secondAttribute="bottom" constant="17" id="MPU-oN-CzU"/>
+                            <constraint firstItem="pu2-uT-Alq" firstAttribute="centerY" secondItem="8eK-cB-35o" secondAttribute="centerY" id="gap-6Q-3sL"/>
+                            <constraint firstItem="pu2-uT-Alq" firstAttribute="top" secondItem="DqG-Lo-ss0" secondAttribute="bottom" constant="21" id="oOS-Ij-Uk7"/>
+                            <constraint firstItem="ZQK-91-llK" firstAttribute="centerX" secondItem="8eK-cB-35o" secondAttribute="centerX" id="z5f-M7-2Px"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HJG-BC-E5B"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="DqG-Lo-ss0" id="tPI-9L-0Zo"/>
+                        <outlet property="errorButton" destination="ZQK-91-llK" id="wba-6O-eH0"/>
+                        <outlet property="errorTextLabel" destination="pu2-uT-Alq" id="40g-J4-p3L"/>
+                        <segue destination="Lpl-g6-ggP" kind="show" identifier="openApp" id="cBL-Q4-IdQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JrS-YK-CTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1114" y="-343"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="H9P-hY-gfu">

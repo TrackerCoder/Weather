@@ -8,8 +8,10 @@
 
 import Foundation
 import PromiseKit
+import CoreLocation
 
 protocol WeatherService {
+    var userLocation: CLLocationCoordinate2D! {get set}
     func getCurrentWeather() -> Promise<WeatherData>
     func getWeatherPerDay() -> Promise<WeatherForecast>
 }

@@ -35,6 +35,11 @@
 		DC04787E22317973003F84AF /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04787D22317973003F84AF /* WeatherForecast.swift */; };
 		DC04788422318B53003F84AF /* ViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04788322318B53003F84AF /* ViewInput.swift */; };
 		DC04788622318D6C003F84AF /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04788522318D6C003F84AF /* Errors.swift */; };
+		DC26B8B9223250310021C0C5 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26B8B8223250310021C0C5 /* RootViewController.swift */; };
+		DC26B8BB2232503F0021C0C5 /* RootViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26B8BA2232503F0021C0C5 /* RootViewIO.swift */; };
+		DC26B8BD223250480021C0C5 /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26B8BC223250480021C0C5 /* RootPresenter.swift */; };
+		DC26B8BF223250510021C0C5 /* RootAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26B8BE223250510021C0C5 /* RootAssembler.swift */; };
+		DC26B8C122325CD80021C0C5 /* LocationErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26B8C022325CD80021C0C5 /* LocationErrorType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +74,11 @@
 		DC04787D22317973003F84AF /* WeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
 		DC04788322318B53003F84AF /* ViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInput.swift; sourceTree = "<group>"; };
 		DC04788522318D6C003F84AF /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		DC26B8B8223250310021C0C5 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		DC26B8BA2232503F0021C0C5 /* RootViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewIO.swift; sourceTree = "<group>"; };
+		DC26B8BC223250480021C0C5 /* RootPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
+		DC26B8BE223250510021C0C5 /* RootAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAssembler.swift; sourceTree = "<group>"; };
+		DC26B8C022325CD80021C0C5 /* LocationErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationErrorType.swift; sourceTree = "<group>"; };
 		F86C9E674D332CBF6626C1DF /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +159,7 @@
 		DC047846223140C5003F84AF /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DC26B8B4223250070021C0C5 /* Root */,
 				DC04786B22316D8A003F84AF /* WeatherForecast */,
 				DC04784A223141F6003F84AF /* CurrentWeather */,
 			);
@@ -272,6 +283,42 @@
 				DC04787B2231753A003F84AF /* WeatherCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		DC26B8B4223250070021C0C5 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DC26B8B7223250210021C0C5 /* Assembler */,
+				DC26B8B62232501C0021C0C5 /* Presenter */,
+				DC26B8B5223250150021C0C5 /* View */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		DC26B8B5223250150021C0C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC26B8B8223250310021C0C5 /* RootViewController.swift */,
+				DC26B8BA2232503F0021C0C5 /* RootViewIO.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DC26B8B62232501C0021C0C5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DC26B8BC223250480021C0C5 /* RootPresenter.swift */,
+				DC26B8C022325CD80021C0C5 /* LocationErrorType.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DC26B8B7223250210021C0C5 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				DC26B8BE223250510021C0C5 /* RootAssembler.swift */,
+			);
+			path = Assembler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,10 +447,12 @@
 				DC047857223144C3003F84AF /* WeatherService.swift in Sources */,
 				DC04784F22314239003F84AF /* CurrentWeatherAssembler.swift in Sources */,
 				DC047867223157E3003F84AF /* WeatherData.swift in Sources */,
+				DC26B8C122325CD80021C0C5 /* LocationErrorType.swift in Sources */,
 				DC04786122315579003F84AF /* Dashboard.swift in Sources */,
 				DC04785122314277003F84AF /* CurrentWeatherPresenter.swift in Sources */,
 				DC04787022316DCC003F84AF /* WeatherForecastViewController.swift in Sources */,
 				DC04787322316DDC003F84AF /* WeatherForecastViewIO.swift in Sources */,
+				DC26B8BF223250510021C0C5 /* RootAssembler.swift in Sources */,
 				DC04785C22314577003F84AF /* ServiceAssembler.swift in Sources */,
 				DC04785F2231526A003F84AF /* Weather.swift in Sources */,
 				DC04783422313E83003F84AF /* AppDelegate.swift in Sources */,
@@ -411,7 +460,9 @@
 				DC04785A223144E4003F84AF /* WeatherServiceImp.swift in Sources */,
 				DC04787C2231753A003F84AF /* WeatherCell.swift in Sources */,
 				DC04788422318B53003F84AF /* ViewInput.swift in Sources */,
+				DC26B8B9223250310021C0C5 /* RootViewController.swift in Sources */,
 				DC04784922314133003F84AF /* SwinjectInitAssembler.swift in Sources */,
+				DC26B8BD223250480021C0C5 /* RootPresenter.swift in Sources */,
 				DC04785322314283003F84AF /* CurrentWeatherViewController.swift in Sources */,
 				DC04787E22317973003F84AF /* WeatherForecast.swift in Sources */,
 				DC04787522316DE8003F84AF /* WeatherForecastPresenter.swift in Sources */,
@@ -419,6 +470,7 @@
 				DC04786A223169DF003F84AF /* Double+FromFarenheitToCelcius.swift in Sources */,
 				DC0478552231428F003F84AF /* CurrentWeatherViewIO.swift in Sources */,
 				DC0478652231574B003F84AF /* Location.swift in Sources */,
+				DC26B8BB2232503F0021C0C5 /* RootViewIO.swift in Sources */,
 				DC0478632231562E003F84AF /* Wind.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
