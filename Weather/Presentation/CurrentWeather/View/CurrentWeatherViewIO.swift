@@ -8,8 +8,10 @@
 
 import Foundation
 
-protocol CurrentWeatherViewInput: class {
+protocol CurrentWeatherViewInput: class, UIViewInput {
     func didLoad(data: WeatherData)
+    func startLoading()
+    func stopLoading()
 }
 
 protocol CurrentWeatherViewOutput {

@@ -12,10 +12,10 @@ import ObjectMapper
 struct Wind: ImmutableMappable {
     
     var speed: Double
-    var degree: Double
+    var degree: Double?
     
     init(map: Map) throws {
-        degree = try map.value("deg")
+        degree = try? map.value("deg")
         speed = try map.value("speed")
     }
 }

@@ -11,4 +11,5 @@ import PromiseKit
 
 protocol WeatherService {
     func getCurrentWeather() -> Promise<WeatherData>
+    func getWeatherPerDay() -> Promise<WeatherForecast>
 }

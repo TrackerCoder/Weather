@@ -26,6 +26,15 @@
 		DC0478652231574B003F84AF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0478642231574B003F84AF /* Location.swift */; };
 		DC047867223157E3003F84AF /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC047866223157E3003F84AF /* WeatherData.swift */; };
 		DC04786A223169DF003F84AF /* Double+FromFarenheitToCelcius.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC047869223169DF003F84AF /* Double+FromFarenheitToCelcius.swift */; };
+		DC04787022316DCC003F84AF /* WeatherForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04786F22316DCC003F84AF /* WeatherForecastViewController.swift */; };
+		DC04787322316DDC003F84AF /* WeatherForecastViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04787222316DDC003F84AF /* WeatherForecastViewIO.swift */; };
+		DC04787522316DE8003F84AF /* WeatherForecastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04787422316DE8003F84AF /* WeatherForecastPresenter.swift */; };
+		DC04787722316DF5003F84AF /* WeatherForecastAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04787622316DF5003F84AF /* WeatherForecastAssembler.swift */; };
+		DC04787A2231752F003F84AF /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC0478792231752F003F84AF /* WeatherCell.xib */; };
+		DC04787C2231753A003F84AF /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04787B2231753A003F84AF /* WeatherCell.swift */; };
+		DC04787E22317973003F84AF /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04787D22317973003F84AF /* WeatherForecast.swift */; };
+		DC04788422318B53003F84AF /* ViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04788322318B53003F84AF /* ViewInput.swift */; };
+		DC04788622318D6C003F84AF /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04788522318D6C003F84AF /* Errors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +60,15 @@
 		DC0478642231574B003F84AF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DC047866223157E3003F84AF /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		DC047869223169DF003F84AF /* Double+FromFarenheitToCelcius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+FromFarenheitToCelcius.swift"; sourceTree = "<group>"; };
+		DC04786F22316DCC003F84AF /* WeatherForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastViewController.swift; sourceTree = "<group>"; };
+		DC04787222316DDC003F84AF /* WeatherForecastViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastViewIO.swift; sourceTree = "<group>"; };
+		DC04787422316DE8003F84AF /* WeatherForecastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastPresenter.swift; sourceTree = "<group>"; };
+		DC04787622316DF5003F84AF /* WeatherForecastAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastAssembler.swift; sourceTree = "<group>"; };
+		DC0478792231752F003F84AF /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
+		DC04787B2231753A003F84AF /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		DC04787D22317973003F84AF /* WeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
+		DC04788322318B53003F84AF /* ViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInput.swift; sourceTree = "<group>"; };
+		DC04788522318D6C003F84AF /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		F86C9E674D332CBF6626C1DF /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +140,8 @@
 			children = (
 				DC04783322313E83003F84AF /* AppDelegate.swift */,
 				DC04784822314133003F84AF /* SwinjectInitAssembler.swift */,
+				DC04788322318B53003F84AF /* ViewInput.swift */,
+				DC04788522318D6C003F84AF /* Errors.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -129,6 +149,7 @@
 		DC047846223140C5003F84AF /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DC04786B22316D8A003F84AF /* WeatherForecast */,
 				DC04784A223141F6003F84AF /* CurrentWeather */,
 			);
 			path = Presentation;
@@ -195,6 +216,7 @@
 				DC0478622231562E003F84AF /* Wind.swift */,
 				DC0478642231574B003F84AF /* Location.swift */,
 				DC047866223157E3003F84AF /* WeatherData.swift */,
+				DC04787D22317973003F84AF /* WeatherForecast.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -205,6 +227,51 @@
 				DC047869223169DF003F84AF /* Double+FromFarenheitToCelcius.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DC04786B22316D8A003F84AF /* WeatherForecast */ = {
+			isa = PBXGroup;
+			children = (
+				DC04786E22316DAD003F84AF /* Assembler */,
+				DC04786C22316D94003F84AF /* Presenter */,
+				DC04786D22316DA4003F84AF /* View */,
+			);
+			path = WeatherForecast;
+			sourceTree = "<group>";
+		};
+		DC04786C22316D94003F84AF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DC04787422316DE8003F84AF /* WeatherForecastPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DC04786D22316DA4003F84AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC04787822317502003F84AF /* Cell */,
+				DC04786F22316DCC003F84AF /* WeatherForecastViewController.swift */,
+				DC04787222316DDC003F84AF /* WeatherForecastViewIO.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DC04786E22316DAD003F84AF /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				DC04787622316DF5003F84AF /* WeatherForecastAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		DC04787822317502003F84AF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DC0478792231752F003F84AF /* WeatherCell.xib */,
+				DC04787B2231753A003F84AF /* WeatherCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC04787A2231752F003F84AF /* WeatherCell.xib in Resources */,
 				DC04783E22313E84003F84AF /* LaunchScreen.storyboard in Resources */,
 				DC04783B22313E84003F84AF /* Assets.xcassets in Resources */,
 				DC04783922313E83003F84AF /* Main.storyboard in Resources */,
@@ -334,12 +402,20 @@
 				DC047867223157E3003F84AF /* WeatherData.swift in Sources */,
 				DC04786122315579003F84AF /* Dashboard.swift in Sources */,
 				DC04785122314277003F84AF /* CurrentWeatherPresenter.swift in Sources */,
+				DC04787022316DCC003F84AF /* WeatherForecastViewController.swift in Sources */,
+				DC04787322316DDC003F84AF /* WeatherForecastViewIO.swift in Sources */,
 				DC04785C22314577003F84AF /* ServiceAssembler.swift in Sources */,
 				DC04785F2231526A003F84AF /* Weather.swift in Sources */,
 				DC04783422313E83003F84AF /* AppDelegate.swift in Sources */,
+				DC04787722316DF5003F84AF /* WeatherForecastAssembler.swift in Sources */,
 				DC04785A223144E4003F84AF /* WeatherServiceImp.swift in Sources */,
+				DC04787C2231753A003F84AF /* WeatherCell.swift in Sources */,
+				DC04788422318B53003F84AF /* ViewInput.swift in Sources */,
 				DC04784922314133003F84AF /* SwinjectInitAssembler.swift in Sources */,
 				DC04785322314283003F84AF /* CurrentWeatherViewController.swift in Sources */,
+				DC04787E22317973003F84AF /* WeatherForecast.swift in Sources */,
+				DC04787522316DE8003F84AF /* WeatherForecastPresenter.swift in Sources */,
+				DC04788622318D6C003F84AF /* Errors.swift in Sources */,
 				DC04786A223169DF003F84AF /* Double+FromFarenheitToCelcius.swift in Sources */,
 				DC0478552231428F003F84AF /* CurrentWeatherViewIO.swift in Sources */,
 				DC0478652231574B003F84AF /* Location.swift in Sources */,
@@ -491,7 +567,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J9XP8VFH35;
 				INFOPLIST_FILE = Weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +587,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J9XP8VFH35;
 				INFOPLIST_FILE = Weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

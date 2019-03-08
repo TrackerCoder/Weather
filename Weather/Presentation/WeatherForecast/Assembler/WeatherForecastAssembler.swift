@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherAssembler.swift
+//  WeatherWeekAssembler.swift
 //  Weather
 //
 //  Created by Tracker on 07.03.2019.
@@ -9,15 +9,14 @@
 import Foundation
 import Swinject
 
-class CurrentWeatherAssembler: Assembly, SwinjectInitAssembler {
+class WeatherForecastAssembler: Assembly, SwinjectInitAssembler {
     
     required init() {}
     
     func assemble(container: Container) {
-        container.storyboardInitCompleted(CurrentWeatherViewController.self) { r, vc in
+        container.storyboardInitCompleted(WeatherForecastViewController.self) { r, vc in
             let weatherService = r.resolve(WeatherService.self)!
-            let presenter = CurrentWeatherPresenter(view: vc, service: weatherService)
-            
+            let presenter = WeatherForecastPresenter(view: vc, service: weatherService)
             vc.output = presenter
         }
     }

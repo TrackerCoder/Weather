@@ -11,8 +11,8 @@ import ObjectMapper
 
 struct Dashboard: ImmutableMappable {
     var temp: Double
-    var pressure: Int
-    var humidity: Int
+    var pressure: Double
+    var humidity: Double
     var tempMin: Double
     var tempMax: Double
     

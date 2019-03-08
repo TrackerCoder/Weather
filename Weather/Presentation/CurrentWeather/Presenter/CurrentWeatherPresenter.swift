@@ -20,12 +20,19 @@ class CurrentWeatherPresenter {
     }
     
     func viewIsReady() {
+        getWeather()
+    }
+    
+    func getWeather() {
+        view.startLoading()
         firstly {
             service.getCurrentWeather()
             }.done { (data) in
                 self.view.didLoad(data: data)
             }.catch { (error) in
-                print(error)
+                self.view.show(error: error)
+            }.finally {
+                self.view.stopLoading()
         }
     }
     
