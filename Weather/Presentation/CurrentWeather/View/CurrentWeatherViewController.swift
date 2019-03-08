@@ -27,18 +27,26 @@ class CurrentWeatherViewController: UIViewController {
     
     var output: CurrentWeatherViewOutput!
     
+    var weatherData: WeatherData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewIsReady()
     }
     
     @IBAction func share(_ sender: UIButton) {
+        guard let data = weatherData else { return show(error: SystemError.shareError) }
+        let items = [ data ]
+        let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        present(activityViewController, animated: true, completion: nil)
     }
     
 }
 
 extension CurrentWeatherViewController: CurrentWeatherViewInput {
     func didLoad(data: WeatherData) {
+        self.weatherData = data
         let url = data.weather.iconURL
         weatherTypeImageView.kf.indicatorType = .activity
         weatherTypeImageView.kf.setImage(with: url)
