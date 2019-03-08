@@ -44,11 +44,6 @@ class WeatherForecastPresenter: WeatherForecastViewOutput {
     }
     
     func getForecast(by index: Int) -> [WeatherData]? {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "EEEE"
-//
-//        let day = Calendar.current.date(byAdding: .day, value: index, to: Date())!
-//        let dayInWeek = dateFormatter.string(from: day)
         let key = getSectionTitle(by: index) ?? ""
         return forecastGroupedByDay[key]
     }
