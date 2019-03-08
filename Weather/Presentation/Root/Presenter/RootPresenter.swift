@@ -29,12 +29,12 @@ class RootPresenter: NSObject, RootViewOutput {
     // move to service
     func getUserLocation() {
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
     }
     
     func requestLocation() {
-        locationManager.requestLocation()
+        locationManager.requestLocation() // too long. Mb change to startUpdatingLocation()
     }
 }
 
